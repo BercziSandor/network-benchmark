@@ -47,9 +47,8 @@ class LatencyBenchmark(object):
                     self.network_timeout_count[server_alias] += 1
 
                 self.network_latency[server_alias].append(ping_time_ms)
-                self.network_timeout_percent[server_alias] = self.network_timeout_count[
-                                                                 server_alias] / \
-                                                             float(n + 1)
+                self.network_timeout_percent[server_alias] = \
+                    self.network_timeout_count[server_alias] / float(n + 1)
                 self.network_latency_np[server_alias] = numpy.array(
                     self.network_latency[server_alias])
 
@@ -114,5 +113,5 @@ if __name__ == '__main__':
 
     ]
 
-    test = LatencyBenchmark(servers=servers, interval_in_sec=2) \
-            test.run_test(50)
+    test = LatencyBenchmark(servers=servers, interval_in_sec=2)
+    test.run_test(50)
