@@ -5,6 +5,6 @@ python:
 install:
   - sudo apt-get -y install iputils-ping
   - pip install --upgrade pip
-  - pip install numpy pexpect
+  - pip install numpy ping3
 # command to run tests
 script: python testunit.py
