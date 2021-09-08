@@ -13,7 +13,7 @@ class LatencyBenchmark(object):
     def __init__(self, servers: List[dict], interval_in_sec: float = 1.0, timeout_in_sec: float =
     0.2):
         object.__init__(self)
-        if not isinstance(servers,list):
+        if not isinstance(servers, list):
             print("Parameter 'servers' isn't a list, aborting'")
             sys.exit(1)
 
@@ -48,7 +48,7 @@ class LatencyBenchmark(object):
                         raise Exception
                     ping_time_ms = round(float(ping_time_orig) * 1000, 0)
 
-                except Exception as s:
+                except Exception:
                     ping_time_ms = numpy.nan
                     self.network_timeout_count[server_alias] += 1
 
