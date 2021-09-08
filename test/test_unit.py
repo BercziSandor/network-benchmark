@@ -18,12 +18,14 @@ class PingTest(unittest.TestCase):
         assert network_benchmark.LatencyBenchmark(servers=[PingTest.g]) is not None
 
     def testPingDNSCustomTimeout(self):
-        assert network_benchmark.LatencyBenchmark(servers=[PingTest.g], timeout_in_sec=300) is not None
+        assert network_benchmark.LatencyBenchmark(servers=[PingTest.g],
+                                                  timeout_in_sec=300) is not None
 
     def testPingWrongDNS(self):
         try:
-            assert network_benchmark.LatencyBenchmark(servers=[{'name': 'google.cXXXXom', 'alias':
-                'google_fake'}]) is not None
+            assert network_benchmark.LatencyBenchmark(servers=[{'name': 'google.cXXXXom',
+                                                                'alias': 'google_fake'}]) \
+                   is not None
         except IndexError:
             pass
         except Exception as e:
