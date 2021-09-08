@@ -10,8 +10,10 @@ from ping3 import ping
 # based on: https://github.com/matthieu-lapeyre/network-benchmark
 
 class LatencyBenchmark(object):
-    def __init__(self, servers: List[dict], interval_in_sec: float = 1.0, timeout_in_sec: float =
-    0.2):
+    def __init__(self,
+                 servers: List[dict],
+                 interval_in_sec: float = 1.0,
+                 timeout_in_sec: float = 0.2):
         object.__init__(self)
         if not isinstance(servers, list):
             print("Parameter 'servers' isn't a list, aborting'")
