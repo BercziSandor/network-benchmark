@@ -33,8 +33,12 @@ class PingTest(unittest.TestCase):
 
     def testPingWrongNoDNS(self):
         try:
-            assert network_benchmark.LatencyBenchmark(servers=[{'name': '256.232.111.0', 'alias':
-                'google_fake'}]) is not None
+            assert network_benchmark.LatencyBenchmark(servers=[
+                {
+                    'name': '256.232.111.0',
+                    'alias': 'google_fake'
+                }
+            ]) is not None
         except IndexError:
             pass
         except Exception as e:
