@@ -36,5 +36,7 @@ jobs:
         pytest -v
     - name: Coverage test
       run: |
+        CWD="$(pwd)"
         pytest --cov-report term-missing
+        pytest --cov=$cwd test/ -m
 
