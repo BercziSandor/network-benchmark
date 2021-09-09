@@ -1,7 +1,6 @@
 import unittest
 
-# from .context import network_benchmark
-from network_benchmark import network_benchmark
+from .context import network_benchmark
 
 
 class PingTest(unittest.TestCase):
