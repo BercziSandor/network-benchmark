@@ -36,6 +36,5 @@ jobs:
         pytest -v
     - name: Coverage test
       run: |
-        CWD="$(pwd)"
-        pytest -v --ignore-glob=test/ --cov-report term-missing --cov=$CWD test/ 
+        pytest -v --cov-report term-missing --cov=network-benckmark test/
 
